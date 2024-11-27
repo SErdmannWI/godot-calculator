@@ -1,0 +1,455 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnq6ceuuss2nx"]
+
+[ext_resource type="Script" path="res://scenes/calculator/calculator.gd" id="1_0u8nl"]
+[ext_resource type="Texture2D" uid="uid://dlep7dm3xa58i" path="res://assets/png/background/blue.png" id="1_axsam"]
+[ext_resource type="Theme" uid="uid://5w0euxtp6nn2" path="res://themes/calc_main_display.tres" id="2_1t7g3"]
+[ext_resource type="Texture2D" uid="uid://c71r37xbvxiux" path="res://assets/png/background/calc_screen_texture.png" id="3_4nibd"]
+[ext_resource type="Theme" uid="uid://dib5yarrk8mnu" path="res://themes/calc_auxillary_display.tres" id="4_a4e4x"]
+[ext_resource type="Theme" uid="uid://baoriekcto7jv" path="res://themes/calc_result_display.tres" id="5_jw1pa"]
+[ext_resource type="Theme" uid="uid://bcpqteq1iihn0" path="res://themes/cal_center_buttons.tres" id="6_u5q24"]
+
+[node name="Calculator" type="Node2D"]
+script = ExtResource("1_0u8nl")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(963.5, 541.5)
+scale = Vector2(7.60547, 4.30078)
+texture = ExtResource("1_axsam")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 1926.0
+offset_bottom = 1100.0
+
+[node name="DisplayOuterMarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -294.0
+offset_right = 294.0
+offset_bottom = 247.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 75
+
+[node name="DisplayPanelContainer" type="PanelContainer" parent="CanvasLayer/DisplayOuterMarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_1t7g3")
+
+[node name="DisplayInnerMarginContainer" type="MarginContainer" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DisplayBackground" type="TextureRect" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_4nibd")
+expand_mode = 3
+
+[node name="DisplayGridContainer" type="GridContainer" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="LeftVBoxContainer" type="VBoxContainer" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer"]
+layout_mode = 2
+theme = ExtResource("4_a4e4x")
+theme_override_constants/separation = 45
+alignment = 2
+
+[node name="FunctionLabel" type="Label" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/LeftVBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(33, 0)
+layout_mode = 2
+text = "Rad"
+horizontal_alignment = 2
+clip_text = true
+
+[node name="PosNegLabel" type="Label" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/LeftVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "-"
+horizontal_alignment = 2
+
+[node name="WarnLabel" type="Label" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/LeftVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "NaN"
+horizontal_alignment = 2
+
+[node name="CenterVBoxContainer2" type="VBoxContainer" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_jw1pa")
+alignment = 1
+
+[node name="UpperResultLabel" type="Label" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/CenterVBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "544523452345"
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="CenterResultLabel" type="Label" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/CenterVBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+text = "123456789.12345678910"
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="PromptLabel" type="RichTextLabel" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/CenterVBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+focus_mode = 2
+bbcode_enabled = true
+text = "65 + 99 * 342"
+fit_content = true
+scroll_following = true
+autowrap_mode = 0
+selection_enabled = true
+visible_characters = 23
+
+[node name="RightVBoxContainer3" type="VBoxContainer" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer"]
+layout_mode = 2
+theme = ExtResource("4_a4e4x")
+theme_override_constants/separation = 45
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/RightVBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/RightVBoxContainer3/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+text = "Test"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/RightVBoxContainer3/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+text = "5496"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/RightVBoxContainer3/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+text = "Test"
+horizontal_alignment = 2
+
+[node name="Label4" type="Label" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/RightVBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+text = "Test Test"
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="Label5" type="Label" parent="CanvasLayer/DisplayOuterMarginContainer/DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/RightVBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+text = "Test"
+horizontal_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -442.0
+offset_right = 443.0
+offset_bottom = 1083.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 350
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="UpperButtonGridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("6_u5q24")
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 15
+columns = 12
+
+[node name="ButtonPower" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "POWER"
+
+[node name="ButtonMemory" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Memory"
+
+[node name="ButtonFunction" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Function"
+
+[node name="ButtonHyperbolic" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Hyp"
+
+[node name="ButtonSine" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sin"
+
+[node name="ButtonCosine" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cos"
+
+[node name="ButtonTangent" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tan"
+
+[node name="ButtonPi" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "π"
+
+[node name="ButtonExponent" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exp"
+
+[node name="ButtonSquareRoot" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "√"
+
+[node name="ButtonFactorial" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "x!"
+
+[node name="ButtonBackspace" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Backspace"
+
+[node name="Button13" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+layout_mode = 2
+text = "POWER"
+
+[node name="Button14" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+layout_mode = 2
+text = "Memory"
+
+[node name="Button15" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+layout_mode = 2
+text = "Function"
+
+[node name="Button16" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+layout_mode = 2
+text = "Hyp"
+
+[node name="Button17" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+layout_mode = 2
+text = "Sin"
+
+[node name="Button18" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+layout_mode = 2
+text = "Cos"
+
+[node name="Button19" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+layout_mode = 2
+text = "Tan"
+
+[node name="Button20" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+layout_mode = 2
+text = "π"
+
+[node name="Button21" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+layout_mode = 2
+text = "Exp"
+
+[node name="Button22" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+layout_mode = 2
+text = "√"
+
+[node name="Button23" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+layout_mode = 2
+text = "x!"
+
+[node name="Button24" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer"]
+layout_mode = 2
+text = "Backspace"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="LeftButtonGridContainer3" type="GridContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_u5q24")
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 15
+columns = 5
+
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer3"]
+layout_mode = 2
+text = "x"
+
+[node name="Button3" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer3"]
+layout_mode = 2
+text = "x"
+
+[node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer3"]
+layout_mode = 2
+text = "x"
+
+[node name="Button5" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer3"]
+layout_mode = 2
+text = "x"
+
+[node name="Button2" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer3"]
+layout_mode = 2
+text = "x"
+
+[node name="CentralButtonGridContainer2" type="GridContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("6_u5q24")
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 15
+columns = 5
+
+[node name="ButtonSeven" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "7"
+
+[node name="ButtonEight" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "8"
+
+[node name="ButtonNine" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "9"
+
+[node name="ButtonLeftParen" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "("
+
+[node name="ButtonRightParen" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = ")"
+
+[node name="ButtonFour" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "4"
+
+[node name="ButtonFive" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
+
+[node name="ButtonSix" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "6"
+
+[node name="ButtonMultiply" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "*"
+
+[node name="ButtonDivide" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "÷"
+
+[node name="ButtonOne" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1"
+
+[node name="ButtonTwo" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "2"
+
+[node name="ButtonThree" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "3"
+
+[node name="ButtonAdd" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "+"
+
+[node name="ButtonSubtract" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "-"
+
+[node name="ButtonZero" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="ButtonDecimal" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["TextButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "."
+
+[node name="ButtonPosNeg" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["FunctionButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "(-)"
+
+[node name="ButtonEquals" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2" groups=["FunctionButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Equals"
+
+[node name="ButtonUnused" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Unused"
+
+[node name="RightButtonGridContainer4" type="GridContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_u5q24")
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 15
+columns = 5
+
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer4"]
+layout_mode = 2
+text = "x"
+
+[node name="Button3" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer4"]
+layout_mode = 2
+text = "x"
+
+[node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer4"]
+layout_mode = 2
+text = "x"
+
+[node name="Button5" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer4"]
+layout_mode = 2
+text = "x"
+
+[node name="Button2" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer4"]
+layout_mode = 2
+text = "x"

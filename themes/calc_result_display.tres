@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://baoriekcto7jv"]
+
+[ext_resource type="FontFile" uid="uid://jpw5rq0wofen" path="res://assets/font/Space_Mono/SpaceMono-Bold.ttf" id="1_msyyv"]
+
+[resource]
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_msyyv")
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/normal_font = ExtResource("1_msyyv")

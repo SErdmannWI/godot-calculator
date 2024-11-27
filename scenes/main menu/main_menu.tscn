@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt24f8kfhhyn1"]
+
+[ext_resource type="Texture2D" uid="uid://dlep7dm3xa58i" path="res://assets/png/background/blue.png" id="1_4xa4w"]
+[ext_resource type="Script" path="res://scenes/main menu/main_menu.gd" id="1_uqwna"]
+[ext_resource type="Theme" uid="uid://bcpqteq1iihn0" path="res://themes/cal_center_buttons.tres" id="3_61o8k"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_uqwna")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(974.5, 531)
+scale = Vector2(7.75391, 4.33594)
+texture = ExtResource("1_4xa4w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Background"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -117.0
+offset_right = 125.5
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_61o8k")
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="OpenCalculatorButton" type="Button" parent="Background/CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Open Calculator"
+
+[node name="SettingsButton" type="Button" parent="Background/CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="Background/CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit"

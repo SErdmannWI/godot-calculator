@@ -1,0 +1,12 @@
+res://themes/main_menu_button_1.tres
+res://scenes/calculator/calculator.tscn
+res://scenes/calculator/calc_main_display.tres
+res://scenes/main menu/main_menu.tscn
+res://scenes/calculator/calc_result_display.tres
+res://scenes/calculator/calc_status_display.tres
+res://themes/calc_auxillary_display.tres
+res://themes/calc_result_display.tres
+res://global_scripts/constants.gd
+res://scenes/main menu/main_menu.gd
+res://themes/cal_center_buttons.tres
+res://scenes/calculator/calculator.gd

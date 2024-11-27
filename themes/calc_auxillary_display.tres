@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dib5yarrk8mnu"]
+
+[ext_resource type="FontFile" uid="uid://b6nw10akcuedy" path="res://assets/font/Space_Mono/SpaceMono-Regular.ttf" id="1_u8s28"]
+
+[resource]
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_u8s28")
