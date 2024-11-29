@@ -1,37 +1,12 @@
 extends Node2D
 
-# Math Functions
-# Absolute Value- abs(x: Variant)
-# Exponent- pow(base, exponent)
-# Square Root- sqrt(x: float)
-# Floating Point Remainder- fmod(x: float, y: float)
-# Sine- sin(angle_rad: float)
-# Cosine- cos(angle_rad: float)
-# Tangent- tan(angle_rad: float)
-# Arc Sine- asin(x: float)
-# Arc Cosine- acos(x: float)
-# Arc Tangent- atan(x: float)
-# Arc Tangent Cartesian- atan2(y: float, x: float)
-# Hyperbolic Sine- sinh(x: float)
-# Hyperbolic Cosine- cosh(x: float)
-# Hyperbolic Tangent- tanh(x: float)
-# Inverse Hyp Sine- asinh(x: float)
-# Inverse Hyp Cosine- acosh(x: float)
-# Inverse Hyp Tangent- atanh(x: float)
-# Euler's Exponent- exp(x: float)
-# Logarithm- log(x: float)
-# Degrees to Radians- deg_to_rad(deg: float)
-# Radians to Degrees- rad_to_deg(rad: float)
-
-
 var prompt_buffer: String = ""
 var buffer_number: String = ""
 var buffer_value: float = 0.0
 var is_powered_on: bool = false
 var buffer_number_complete: bool = false
 
-
-# Button Containers
+# Buttons
 @onready var upper_button_grid_container: GridContainer = %UpperButtonGridContainer
 @onready var left_button_grid_container: GridContainer = %LeftButtonGridContainer
 @onready var central_button_grid_container: GridContainer = %CentralButtonGridContainer
@@ -41,7 +16,7 @@ var buffer_number_complete: bool = false
 @onready var display: Display = %Display
 
 
-# Set up regex, reset display, connect buttons to functions
+
 func _ready() -> void:
 	for child: Button in upper_button_grid_container.get_children():
 		child.button_down.connect(_on_button_pressed.bind(child))
@@ -114,8 +89,6 @@ func _on_function_button_pressed(value: String) -> void:
 			"=":
 				print("Equals")
 				_on_equals()
-			"%":
-				_on_percentage()
 			"Clear":
 				_on_clear_pressed()
 			_:
@@ -125,8 +98,6 @@ func _on_function_button_pressed(value: String) -> void:
 ###################################################################################################
 ########################################## Math Functions #########################################
 ###################################################################################################
-
-
 func _on_equals() -> void:
 	var expression = Expression.new()
 	print("Parsing expression: %s" % prompt_buffer)
@@ -149,15 +120,6 @@ func _on_equals() -> void:
 		print("Execute failed")
 
 
-# Get buffer number, apply percentage to that and get a value. Add value to prompt
-func _on_percentage() -> void:
-	var percentage = buffer_number
-
-
-func _apply_percentage() -> float:
-	return 0.0
-
-
 ###################################################################################################
 ######################################## Utility Functions ########################################
 ###################################################################################################
@@ -168,4 +130,4 @@ func _on_clear_pressed() -> void:
 
 
 func _on_mode_pressed() -> void:
-	get_tree().change_scene_to_file(FilePaths.SCENE_PATH_PROBABILITY_MODE)
+	get_tree().change_scene_to_file(FilePaths.SCENE_PATH_CALCULATOR)

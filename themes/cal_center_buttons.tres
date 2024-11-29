@@ -5,6 +5,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1a4f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxgid"]
+content_margin_left = 20.0
+content_margin_right = 20.0
 bg_color = Color(0.99997, 0.383788, 0.442657, 0.996078)
 border_width_left = 5
 border_width_top = 5
@@ -12,10 +14,10 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 border_blend = true
-expand_margin_left = 10.0
-expand_margin_right = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sca64"]
+content_margin_left = 20.0
+content_margin_right = 20.0
 bg_color = Color(0.482353, 0, 0.12549, 0.996078)
 border_width_left = 5
 border_width_top = 5
@@ -23,10 +25,10 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 border_blend = true
-expand_margin_left = 10.0
-expand_margin_right = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hydp"]
+content_margin_left = 20.0
+content_margin_right = 20.0
 bg_color = Color(0.484011, 0, 0.125321, 0.996078)
 border_width_left = 5
 border_width_top = 5
@@ -34,10 +36,10 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 border_blend = true
-expand_margin_left = 10.0
-expand_margin_right = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm37o"]
+content_margin_left = 20.0
+content_margin_right = 20.0
 bg_color = Color(0.921812, 0.000191609, 0.271812, 0.996078)
 border_width_left = 5
 border_width_top = 5
@@ -45,10 +47,10 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 border_blend = true
-expand_margin_left = 10.0
-expand_margin_right = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4h8uu"]
+content_margin_left = 20.0
+content_margin_right = 20.0
 bg_color = Color(0.484011, 0, 0.125321, 0.996078)
 border_width_left = 5
 border_width_top = 5
@@ -56,10 +58,10 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 border_blend = true
-expand_margin_left = 10.0
-expand_margin_right = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57epu"]
+content_margin_left = 20.0
+content_margin_right = 20.0
 bg_color = Color(0.484011, 0, 0.125321, 0.996078)
 border_width_left = 5
 border_width_top = 5
@@ -67,8 +69,6 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 border_blend = true
-expand_margin_left = 10.0
-expand_margin_right = 10.0
 
 [resource]
 Button/colors/font_color = Color(0.73411, 0.783145, 0.142045, 1)

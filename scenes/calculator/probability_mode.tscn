@@ -1,17 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnq6ceuuss2nx"]
+[gd_scene load_steps=5 format=3 uid="uid://cj4v3d4jyxcth"]
 
-[ext_resource type="Script" path="res://scenes/calculator/calculator.gd" id="1_0u8nl"]
-[ext_resource type="Texture2D" uid="uid://dlep7dm3xa58i" path="res://assets/png/background/blue.png" id="1_axsam"]
-[ext_resource type="PackedScene" uid="uid://e678hrw2246q" path="res://scenes/calculator/display.tscn" id="3_pidod"]
-[ext_resource type="Theme" uid="uid://bcpqteq1iihn0" path="res://themes/cal_center_buttons.tres" id="6_u5q24"]
+[ext_resource type="Script" path="res://scenes/calculator/probability_mode.gd" id="1_md4vx"]
+[ext_resource type="Texture2D" uid="uid://dlep7dm3xa58i" path="res://assets/png/background/blue.png" id="2_n4uji"]
+[ext_resource type="PackedScene" uid="uid://e678hrw2246q" path="res://scenes/calculator/display.tscn" id="3_a2dfl"]
+[ext_resource type="Theme" uid="uid://bcpqteq1iihn0" path="res://themes/cal_center_buttons.tres" id="7_15j5m"]
 
-[node name="Calculator" type="Node2D"]
-script = ExtResource("1_0u8nl")
+[node name="CalculatorProbability" type="Node2D"]
+script = ExtResource("1_md4vx")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(963.5, 541.5)
 scale = Vector2(7.60547, 4.30078)
-texture = ExtResource("1_axsam")
+texture = ExtResource("2_n4uji")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -19,11 +19,8 @@ texture = ExtResource("1_axsam")
 offset_right = 1926.0
 offset_bottom = 1100.0
 
-[node name="Display" parent="CanvasLayer" instance=ExtResource("3_pidod")]
+[node name="Display" parent="CanvasLayer" instance=ExtResource("3_a2dfl")]
 unique_name_in_owner = true
-offset_left = -325.5
-offset_right = 325.5
-offset_bottom = 257.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 5
@@ -43,68 +40,56 @@ theme_override_constants/separation = 35
 [node name="UpperButtonGridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("6_u5q24")
+theme = ExtResource("7_15j5m")
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 15
 columns = 12
 
 [node name="ButtonPower" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "POWER"
 
 [node name="ButtonMode" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "Mode"
 
-[node name="ButtonExponent" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["OperatorButtons"]]
-unique_name_in_owner = true
+[node name="ButtonX" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["OperatorButtons"]]
 layout_mode = 2
 text = "X"
 
-[node name="ButtonFunction" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons"]]
-unique_name_in_owner = true
+[node name="ButtonX2" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
 text = "X"
 
-[node name="ButtonHyperbolic" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons"]]
-unique_name_in_owner = true
+[node name="ButtonLeft" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
 text = "←"
 
-[node name="ButtonSine" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons", "OperatorButtons"]]
-unique_name_in_owner = true
+[node name="ButtonUp" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons", "OperatorButtons"]]
 layout_mode = 2
 text = "↑"
 
-[node name="ButtonCosine" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons", "OperatorButtons"]]
-unique_name_in_owner = true
+[node name="ButtonRight" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons", "OperatorButtons"]]
 layout_mode = 2
 text = "→"
 
-[node name="ButtonTangent" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons", "OperatorButtons"]]
-unique_name_in_owner = true
+[node name="ButtonDown" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons", "OperatorButtons"]]
 layout_mode = 2
 text = "↓"
 
-[node name="ButtonPi" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["OperatorButtons"]]
-unique_name_in_owner = true
+[node name="ButtonX3" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["OperatorButtons"]]
 layout_mode = 2
 text = "X"
 
-[node name="ButtonSquareRoot" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["OperatorButtons"]]
-unique_name_in_owner = true
+[node name="ButtonX4" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["OperatorButtons"]]
 layout_mode = 2
 text = "X"
 
-[node name="ButtonFactorial" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["OperatorButtons"]]
-unique_name_in_owner = true
+[node name="ButtonX5" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["OperatorButtons"]]
 layout_mode = 2
 text = "X"
 
 [node name="ButtonBackspace" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/UpperButtonGridContainer" groups=["FunctionButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "Backspace"
 
@@ -116,174 +101,153 @@ alignment = 1
 [node name="LeftButtonGridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("6_u5q24")
+theme = ExtResource("7_15j5m")
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 15
 columns = 3
 
-[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer"]
+[node name="ButtonMemory" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
 text = "Memory"
 
-[node name="Button6" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer"]
+[node name="ButtonIndependent" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "Hyp"
+text = "Ind"
 
-[node name="Button7" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer"]
+[node name="ButtonProbability" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "nCr"
+text = "Prob"
 
-[node name="Button8" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer"]
+[node name="ButtonBasic" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "Alpha"
+text = "Basic
+"
 
-[node name="Button9" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer"]
+[node name="ButtonDependent" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "Cos"
+text = "Dep"
 
-[node name="Button10" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer"]
+[node name="ButtonOdds" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "nPr"
+text = "Odds"
 
-[node name="Button11" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer"]
+[node name="ButtonCompound" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "Deg to Rad"
+text = "Compound"
 
-[node name="Button12" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer"]
+[node name="ButtonCompliment" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "Sin"
+text = "Comp"
 
-[node name="Button3" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer"]
+[node name="ButtonPercentage" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "A b/c"
+text = "Percent"
 
-[node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer"]
+[node name="ButtonTime" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "Rad to Deg"
+text = "Time"
 
-[node name="Button5" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer"]
+[node name="ButtonConditional" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "Tan"
+text = "Cond"
 
-[node name="Button2" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer"]
+[node name="ButtonExpectedOccurence" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/LeftButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "d/c"
+text = "Expect"
 
 [node name="CentralButtonGridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("6_u5q24")
+theme = ExtResource("7_15j5m")
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 15
 columns = 5
 
 [node name="ButtonSeven" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["NumberButtons", "OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "7"
 
 [node name="ButtonEight" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["NumberButtons", "OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "8"
 
 [node name="ButtonNine" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["NumberButtons", "OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "9"
 
 [node name="ButtonLeftParen" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
-text = "("
+text = "X"
 
 [node name="ButtonRightParen" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
-text = ")"
+text = "X"
 
 [node name="ButtonFour" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["NumberButtons", "OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "4"
 
 [node name="ButtonFive" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["NumberButtons", "OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "5"
 
 [node name="ButtonSix" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["NumberButtons", "OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "6"
 
 [node name="ButtonMultiply" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
-text = "*"
+text = "X"
 
 [node name="ButtonDivide" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
-text = "÷"
-metadata/Operator = "/"
+text = "X"
 
 [node name="ButtonOne" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["NumberButtons", "OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "1"
 
 [node name="ButtonTwo" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["NumberButtons", "OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "2"
 
 [node name="ButtonThree" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["NumberButtons", "OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "3"
 
 [node name="ButtonAdd" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
-text = "+"
+text = "X"
 
 [node name="ButtonSubtract" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
-text = "-"
+text = "X"
 
 [node name="ButtonZero" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["NumberButtons", "OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 
 [node name="ButtonDecimal" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "."
 
 [node name="ButtonPosNeg" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["OperatorButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
 text = "(-)"
 metadata/Operator = "-"
 
 [node name="ButtonEquals" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["FunctionButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
-text = "="
+text = "Next"
 
 [node name="ButtonPercent" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/CentralButtonGridContainer" groups=["FunctionButtons"]]
-unique_name_in_owner = true
 layout_mode = 2
-text = "%"
+text = "Calc"
 
 [node name="RightButtonGridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("6_u5q24")
+theme = ExtResource("7_15j5m")
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 15
 columns = 3
@@ -292,45 +256,45 @@ columns = 3
 layout_mode = 2
 text = "Clear"
 
-[node name="Button3" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer"]
+[node name="ButtonDay" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "x²"
+text = "Day"
 
 [node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer"]
 layout_mode = 2
 text = "e"
 
-[node name="Button5" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer"]
+[node name="ButtonSecond" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "log"
+text = "Sec"
 
-[node name="Button6" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer"]
+[node name="ButtonWeek" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "x³"
+text = "Wk"
 
 [node name="Button7" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer"]
 layout_mode = 2
 text = "π"
 
-[node name="Button8" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer"]
+[node name="ButtonMinute" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "Exp"
+text = "Min"
 
-[node name="Button9" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer"]
+[node name="ButtonMonth" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "x↑y"
+text = "Mth"
 
 [node name="Button10" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer"]
 layout_mode = 2
 text = "x"
 
-[node name="Button11" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer"]
+[node name="ButtonHour" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "Sqrt"
+text = "Hour"
 
-[node name="Button12" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer"]
+[node name="ButtonYear" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer" groups=["FunctionButtons"]]
 layout_mode = 2
-text = "x!"
+text = "Yr"
 
 [node name="Button2" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/RightButtonGridContainer"]
 layout_mode = 2

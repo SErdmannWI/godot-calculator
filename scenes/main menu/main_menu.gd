@@ -10,11 +10,6 @@ func _ready() -> void:
 	button_open_calculator_button.pressed.connect(_on_open_calclulator_pressed)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_open_calclulator_pressed() -> void:
 	get_tree().change_scene_to_file(FilePaths.SCENE_PATH_CALCULATOR)
 

@@ -1,6 +1,15 @@
 res://scenes/calculator/calculator.tscn
 res://themes/cal_center_buttons.tres
 res://themes/calc_main_display.tres
-res://scenes/main menu/main_menu.tscn
 res://scenes/calculator/calculator.gd
+res://scenes/calculator/probability_mode.tscn
+res://global_scripts/file_paths.gd
+res://scenes/main menu/main_menu.tscn
+res://themes/calc_result_display.tres
+res://scenes/calculator/display.tscn
+res://scenes/calculator/probability_mode.gd
+res://scenes/calculator/display.gd
+res://scenes/main menu/main_menu.gd
 res://global_scripts/constants.gd
+res://global_scripts/calculator_error.gd
+res://scenes/calculator/calculator_mode.gd

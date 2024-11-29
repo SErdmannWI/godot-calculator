@@ -1,0 +1,142 @@
+[gd_scene load_steps=6 format=3 uid="uid://e678hrw2246q"]
+
+[ext_resource type="Theme" uid="uid://5w0euxtp6nn2" path="res://themes/calc_main_display.tres" id="1_h0lls"]
+[ext_resource type="Script" path="res://scenes/calculator/display.gd" id="1_od5yp"]
+[ext_resource type="Texture2D" uid="uid://c71r37xbvxiux" path="res://assets/png/background/calc_screen_texture.png" id="2_ynuqs"]
+[ext_resource type="Theme" uid="uid://dib5yarrk8mnu" path="res://themes/calc_auxillary_display.tres" id="3_kppdw"]
+[ext_resource type="Theme" uid="uid://baoriekcto7jv" path="res://themes/calc_result_display.tres" id="4_isuud"]
+
+[node name="DisplayOuterMarginContainer" type="MarginContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -294.0
+offset_right = 294.0
+offset_bottom = 247.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 75
+script = ExtResource("1_od5yp")
+
+[node name="DisplayPanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme = ExtResource("1_h0lls")
+
+[node name="DisplayInnerMarginContainer" type="MarginContainer" parent="DisplayPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DisplayBackground" type="TextureRect" parent="DisplayPanelContainer/DisplayInnerMarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_ynuqs")
+expand_mode = 3
+
+[node name="DisplayGridContainer" type="GridContainer" parent="DisplayPanelContainer/DisplayInnerMarginContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="LeftVBoxContainer" type="VBoxContainer" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer"]
+layout_mode = 2
+theme = ExtResource("3_kppdw")
+theme_override_constants/separation = 45
+alignment = 2
+
+[node name="ModeLabel" type="Label" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/LeftVBoxContainer" groups=["DisplayLabels"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(33, 0)
+layout_mode = 2
+text = "Rad"
+horizontal_alignment = 2
+clip_text = true
+
+[node name="PosNegLabel" type="Label" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/LeftVBoxContainer" groups=["DisplayLabels"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "-"
+horizontal_alignment = 2
+
+[node name="WarnLabel" type="Label" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/LeftVBoxContainer" groups=["DisplayLabels"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "NaN"
+horizontal_alignment = 2
+
+[node name="CenterVBoxContainer2" type="VBoxContainer" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_isuud")
+alignment = 1
+
+[node name="InstructionLabel" type="Label" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/CenterVBoxContainer2" groups=["DisplayLabels"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Enter total outcomes"
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="CenterResultLabel" type="Label" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/CenterVBoxContainer2" groups=["DisplayLabels"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="PromptLineEdit" type="LineEdit" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/CenterVBoxContainer2" groups=["DisplayLabels"]]
+unique_name_in_owner = true
+layout_mode = 2
+text = "testt"
+placeholder_text = "2X4+(9-5)"
+alignment = 2
+virtual_keyboard_enabled = false
+caret_blink = true
+caret_force_displayed = true
+caret_mid_grapheme = true
+
+[node name="RightVBoxContainer3" type="VBoxContainer" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer"]
+layout_mode = 2
+theme = ExtResource("3_kppdw")
+theme_override_constants/separation = 45
+
+[node name="DataTypeHBoxContainer" type="HBoxContainer" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/RightVBoxContainer3"]
+layout_mode = 2
+
+[node name="TypeLabelLeft" type="Label" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/RightVBoxContainer3/DataTypeHBoxContainer" groups=["DisplayLabels"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+text = "Type"
+horizontal_alignment = 2
+
+[node name="TypeLabelMiddle" type="Label" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/RightVBoxContainer3/DataTypeHBoxContainer" groups=["DisplayLabels"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+text = "Year"
+horizontal_alignment = 2
+
+[node name="TypeLabelRight" type="Label" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/RightVBoxContainer3/DataTypeHBoxContainer" groups=["DisplayLabels"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+text = "Pcnt"
+horizontal_alignment = 2
+
+[node name="AuxLabelMiddle" type="Label" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/RightVBoxContainer3" groups=["DisplayLabels"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+text = "Mid Aux Label"
+horizontal_alignment = 2
+text_overrun_behavior = 3
+
+[node name="AuxLabelBottom" type="Label" parent="DisplayPanelContainer/DisplayInnerMarginContainer/DisplayGridContainer/RightVBoxContainer3" groups=["DisplayLabels"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+text = "Low Aux Label"
+horizontal_alignment = 2
